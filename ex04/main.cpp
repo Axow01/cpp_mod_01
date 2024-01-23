@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:24:07 by mmarcott          #+#    #+#             */
-/*   Updated: 2023/12/20 13:53:12 by mmarcott         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:25:43 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void createNewString(std::string &originString, char *s1, char *s2) {
 	size_t i = 0;
 	size_t s1Length = strlen(s1);
 
-	while ((i = originString.find(s1, i)) != std::string::npos) {
+	while ((i = originString.find(s1, i)) != std::string::npos && s1[0] != '\0') {
 		originString.erase(i, s1Length);
 		originString.insert(i, s2);
 		i += strlen(s2);
